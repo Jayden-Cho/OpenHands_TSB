@@ -1,4 +1,5 @@
 from core.main import MultiAgentSystem
+from core.logger import Logger
 import asyncio
 
 async def test_simple_query():

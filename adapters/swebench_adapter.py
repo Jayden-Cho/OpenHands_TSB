@@ -44,8 +44,6 @@ class SWEBenchAdapter:
             requirements=[
                 f"Repository: {instance['repo']}",
                 f"Base Commit: {instance['base_commit']}",
-                f"Code Changes: {instance['patch']}",
-                f"Test Changes: {instance['test_patch']}",
                 f"Hints: {instance.get('hints_text', 'No hints provided')}",
                 f"Created At: {instance.get('created_at', 'Not specified')}",
                 f"Version: {instance.get('version', 'Not specified')}",
@@ -66,13 +64,3 @@ class SWEBenchAdapter:
             'patch': result
         }
     
-    def _format_query(self, instance: Dict) -> str:
-        """Format SWE-bench instance into a detailed query"""
-        return f"""
-        Repository: {instance['repo']}
-        Problem: {instance['problem_statement']}
-        Code Changes: {instance['patch']}
-        Test Changes: {instance['test_patch']}
-        Base Commit: {instance['base_commit']}
-        Hints: {instance.get('hints_text', 'No hints provided')}
-        """
